@@ -1,11 +1,21 @@
 import React from 'react'
 
-const AuthProvider = ({children}) => {
-    return (
-        <div>
+export const AuthContext = createContext() 
 
-        </div>
-    )
+const AuthProvider = ({ children }) => {
+
+  const [userData, setUserData] = useState(null)
+
+ useEffect(() => {
+  const {employees, admin} = getLocalStorage()
+  setUserData({employees, admin})
+}, [])
+  
+  return <>
+  <AuthContext.Provider value = {userData}>
+    {children} 
+  </AuthContext.Provider>
+  </>
 }
 
 export default AuthProvider
