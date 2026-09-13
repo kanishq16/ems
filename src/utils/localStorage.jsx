@@ -576,14 +576,31 @@ const admin = [
 ]
 
 
-export const setLocalStorage = () => {
-    localStorage.setItem('employees', JSON.stringify(employees));
-    localStorage.setItem('admin', JSON.stringify(admin));
-
+const parseStorage = (key) => {
+  const raw = localStorage.getItem(key)
+  if (!raw || raw === 'undefined') {
+    return null
+  }
+  try {
+    return JSON.parse(raw)
+  } catch {
+    return null
+  }
 }
-export const getLocalStorage = () => {
-  const employees = JSON.parse(localStorage.getItem('employees'));
-  const admin = JSON.parse(localStorage.getItem('admin'))
 
-  console.log(employees, admin)
+export const setLocalStorage = () => {
+  localStorage.setItem('employees', JSON.stringify(employees))
+  localStorage.setItem('admin', JSON.stringify(admin))
+}
+
+export const getLocalStorage = () => {
+  const storedEmployees = parseStorage('employees')
+  const storedAdmin = parseStorage('admin')
+
+  if (!storedEmployees || !storedAdmin) {
+    setLocalStorage()
+    return { employees, admin }
+  }
+
+  return { employees: storedEmployees, admin: storedAdmin }
 }
