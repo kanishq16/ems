@@ -1,131 +1,32 @@
-const employees = [
-  {
-    "id": 1,
-    "email": "employee1@example.com",
-    "password": "123"
-  },
-  {
-    "id": 2,
-    "email": "employee2@example.com",
-    "password": "123"
-  },
-  {
-    "id": 3,
-    "email": "employee3@example.com",
-    "password": "123"
-  },
-  {
-    "id": 4,
-    "email": "employee4@example.com",
-    "password": "123"
-  },
-  {
-    "id": 5,
-    "email": "employee5@example.com",
-    "password": "123"
-  },
-  {
-    "id": 6,
-    "email": "employee6@example.com",
-    "password": "123"
-  },
-  {
-    "id": 7,
-    "email": "employee7@example.com",
-    "password": "123"
-  },
-  {
-    "id": 8,
-    "email": "employee8@example.com",
-    "password": "123"
-  },
-  {
-    "id": 9,
-    "email": "employee9@example.com",
-    "password": "123"
-  },
-  {
-    "id": 10,
-    "email": "employee10@example.com",
-    "password": "123"
-  },
-  {
-    "id": 11,
-    "email": "employee11@example.com",
-    "password": "123"
-  },
-  {
-    "id": 12,
-    "email": "employee12@example.com",
-    "password": "123"
-  },
-  {
-    "id": 13,
-    "email": "employee13@example.com",
-    "password": "123"
-  },
-  {
-    "id": 14,
-    "email": "employee14@example.com",
-    "password": "123"
-  },
-  {
-    "id": 15,
-    "email": "employee15@example.com",
-    "password": "123"
-  },
-  {
-    "id": 16,
-    "email": "employee16@example.com",
-    "password": "123"
-  },
-  {
-    "id": 17,
-    "email": "employee17@example.com",
-    "password": "123"
-  },
-  {
-    "id": 18,
-    "email": "employee18@example.com",
-    "password": "123"
-  },
-  {
-    "id": 19,
-    "email": "employee19@example.com",
-    "password": "123"
-  },
-  {
-    "id": 20,
-    "email": "employee20@example.com",
-    "password": "123"
-  },
-  {
-    "id": 21,
-    "email": "employee21@example.com",
-    "password": "123"
-  },
-  {
-    "id": 22,
-    "email": "employee22@example.com",
-    "password": "123"
-  },
-  {
-    "id": 23,
-    "email": "employee23@example.com",
-    "password": "123"
-  },
-  {
-    "id": 24,
-    "email": "employee24@example.com",
-    "password": "123"
-  },
-  {
-    "id": 25,
-    "email": "employee25@example.com",
-    "password": "123"
-  }
-]
+localStorage.clear()
 
+const employees = [
+  { id: 1, firstName: "Aarav", email: "employee1@example.com", password: "123", taskNumbers: { active: 2, newTask: 1, completed: 5, failed: 0 } },
+  { id: 2, firstName: "Vivaan", email: "employee2@example.com", password: "123", taskNumbers: { active: 3, newTask: 2, completed: 4, failed: 1 } },
+  { id: 3, firstName: "Aditya", email: "employee3@example.com", password: "123", taskNumbers: { active: 1, newTask: 3, completed: 6, failed: 0 } },
+  { id: 4, firstName: "Arjun", email: "employee4@example.com", password: "123", taskNumbers: { active: 4, newTask: 1, completed: 3, failed: 1 } },
+  { id: 5, firstName: "Rohan", email: "employee5@example.com", password: "123", taskNumbers: { active: 2, newTask: 2, completed: 7, failed: 0 } },
+  { id: 6, firstName: "Kabir", email: "employee6@example.com", password: "123", taskNumbers: { active: 3, newTask: 1, completed: 5, failed: 2 } },
+  { id: 7, firstName: "Ishaan", email: "employee7@example.com", password: "123", taskNumbers: { active: 1, newTask: 2, completed: 8, failed: 0 } },
+  { id: 8, firstName: "Rahul", email: "employee8@example.com", password: "123", taskNumbers: { active: 2, newTask: 3, completed: 4, failed: 1 } },
+  { id: 9, firstName: "Karan", email: "employee9@example.com", password: "123", taskNumbers: { active: 4, newTask: 2, completed: 6, failed: 0 } },
+  { id: 10, firstName: "Yash", email: "employee10@example.com", password: "123", taskNumbers: { active: 2, newTask: 1, completed: 5, failed: 1 } },
+  { id: 11, firstName: "Ananya", email: "employee11@example.com", password: "123", taskNumbers: { active: 3, newTask: 2, completed: 7, failed: 0 } },
+  { id: 12, firstName: "Priya", email: "employee12@example.com", password: "123", taskNumbers: { active: 1, newTask: 3, completed: 6, failed: 1 } },
+  { id: 13, firstName: "Diya", email: "employee13@example.com", password: "123", taskNumbers: { active: 2, newTask: 1, completed: 8, failed: 0 } },
+  { id: 14, firstName: "Kavya", email: "employee14@example.com", password: "123", taskNumbers: { active: 4, newTask: 2, completed: 5, failed: 1 } },
+  { id: 15, firstName: "Sneha", email: "employee15@example.com", password: "123", taskNumbers: { active: 3, newTask: 1, completed: 4, failed: 0 } },
+  { id: 16, firstName: "Meera", email: "employee16@example.com", password: "123", taskNumbers: { active: 2, newTask: 2, completed: 7, failed: 1 } },
+  { id: 17, firstName: "Aisha", email: "employee17@example.com", password: "123", taskNumbers: { active: 1, newTask: 1, completed: 9, failed: 0 } },
+  { id: 18, firstName: "Pooja", email: "employee18@example.com", password: "123", taskNumbers: { active: 3, newTask: 3, completed: 5, failed: 1 } },
+  { id: 19, firstName: "Riya", email: "employee19@example.com", password: "123", taskNumbers: { active: 2, newTask: 2, completed: 6, failed: 0 } },
+  { id: 20, firstName: "Nisha", email: "employee20@example.com", password: "123", taskNumbers: { active: 4, newTask: 1, completed: 4, failed: 2 } },
+  { id: 21, firstName: "Neha", email: "employee21@example.com", password: "123", taskNumbers: { active: 2, newTask: 3, completed: 7, failed: 0 } },
+  { id: 22, firstName: "Isha", email: "employee22@example.com", password: "123", taskNumbers: { active: 3, newTask: 1, completed: 6, failed: 1 } },
+  { id: 23, firstName: "Shreya", email: "employee23@example.com", password: "123", taskNumbers: { active: 1, newTask: 2, completed: 8, failed: 0 } },
+  { id: 24, firstName: "Tanvi", email: "employee24@example.com", password: "123", taskNumbers: { active: 3, newTask: 2, completed: 5, failed: 1 } },
+  { id: 25, firstName: "Simran", email: "employee25@example.com", password: "123", taskNumbers: { active: 2, newTask: 1, completed: 7, failed: 0 } }
+];
 
 const admin = [
   {
