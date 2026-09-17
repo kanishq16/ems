@@ -8,9 +8,12 @@ const CreateTask = (e) => {
     const [assignTo, setAssignTo] = useState('')
     const [category, setCategory] = useState('')
 
+    const [task, setTask] = useState({})
+
     const submitHandler = ()=> {
         e.preventDefault()
-        console.log()
+        setTask({taskTitle, taskDescription, taskDate, category, active:false, newTask:true, failed:true,complted:false})
+
     }
 
     return (
@@ -34,12 +37,30 @@ const CreateTask = (e) => {
                     </div>
                     <div>
                         <h3 className='text-sm text-gray-300 mb-0.5'>Assign to</h3>
-                        <input className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4' type="text" placeholder="Enter employee name" />
+                        <input
+                         value={taskDate}
+                         onChange={(e)=> {
+                             setTaskDate(e.target.value)
+                         }}
+                         className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4' type="text" placeholder="Enter employee name" />
                     </div>
                     <div>
                         <h3 className='text-sm text-gray-300 mb-0.5'>Category</h3>
-                        <input className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4' type="text" placeholder="Enter employee name" />
-                        <input className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4' type="text" placeholder="design, dev, etc"/>
+                        <input 
+                         value={assignTo}
+                         onChange={(e)=> {
+                             setAssignTo(e.target.value)
+                         }}
+                        className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4' type="text" placeholder="Enter employee name" />
+                    </div>
+                    <div>
+                        <h3 className='text-sm text-gray-300 mb-0.5'>Category</h3>
+                        <input 
+                         value={taskDescription}
+                         onChange={(e)=> {
+                             setTaskDescription(e.target.value)
+                         }}
+                        className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4' type="text" placeholder="Enter employee name" />
                     </div>
                 </div>
 
