@@ -2,6 +2,8 @@ import React from 'react'
 
 const CreateTask = (e) => {
 
+    const [userData, setUserData] = useContext(AuthContext)
+
     const [taskTitle, setTaskTitle] = useState('') 
     const [taskDescription, settaskDescription] = useState('')
     const [taskDate, settaskDate] = useState('')
@@ -14,15 +16,17 @@ const CreateTask = (e) => {
         e.preventDefault()
         setNewTask({taskTitle, taskDescription, taskDate, category, active:false, newTask:true, failed:false,complted:false})
 
-        const data = JSON.parse(localStorage.getItem('employees'))
-       
+        const data = userData
+      
         data.forEach(function(elem){
             if(assignTo == elem.firstName) {
                elem.tasks.push(newTask)
-
-               console.log(elem)
+                elem.taskCounts.newTask = elem.taskCounts.newTask+1
             }
         })
+       setUserData(data) 
+       console.log(data) 
+        
 
         setTaskTitle('')
         setCategory('')
